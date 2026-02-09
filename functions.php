@@ -278,6 +278,14 @@ add_filter('theme_page_templates', 'onerock_add_page_templates');
  */
 function onerock_load_page_template($template) {
     if (is_page()) {
+        // Force portfolio template for specific slugs if template is not set
+        if (is_page('portfolio') || is_page('our-work') || is_page('portfolio-agency')) {
+            $portfolio_template = locate_template('page-templates/portfolio.php');
+            if ($portfolio_template) {
+                return $portfolio_template;
+            }
+        }
+
         $page_template = get_post_meta(get_the_ID(), '_wp_page_template', true);
         
         if ($page_template && $page_template != 'default') {

@@ -30,6 +30,7 @@
             <span class="hamburger-line"></span>
         </button>
         
+        <div class="nav-menu-wrapper">
             <ul class="nav-links">
                 <li<?php echo (is_front_page()) ? ' class="active"' : ''; ?>><a href="<?php echo esc_url(home_url('/')); ?>">Home</a></li>
                 <li<?php echo (is_page('portfolio') || is_singular('portfolio')) ? ' class="active"' : ''; ?>><a href="<?php echo esc_url(home_url('/portfolio')); ?>">Our Work</a></li>
@@ -39,13 +40,12 @@
                 <li<?php echo (is_page('contact') || is_page('contact-4')) ? ' class="active"' : ''; ?>><a href="<?php echo esc_url(home_url('/contact')); ?>">Contact</a></li>
             </ul>
             
-            
             <div class="nav-actions">
                 <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark mode">
                     <span class="mode-icon light-icon">☀️</span>
                     <span class="mode-icon dark-icon">🌙</span>
                 </button>
-                <a href="#contact" class="btn btn-primary btn-small nav-cta">Get Started</a>
+                <a href="<?php echo esc_url(home_url('/contact')); ?>" class="btn btn-primary btn-small nav-cta">Get Started</a>
             </div>
         </div>
     </div>
