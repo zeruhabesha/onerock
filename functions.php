@@ -209,6 +209,40 @@ function onerock_customize_register($wp_customize) {
         'settings' => 'hero_image',
     )));
 
+    // Hero Video
+    $wp_customize->add_setting('hero_video', array(
+        'default'           => 0,
+        'sanitize_callback' => 'absint',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'hero_video', array(
+        'label'      => __('Hero Video', 'onerock'),
+        'section'    => 'hero_section',
+        'settings'   => 'hero_video',
+        'mime_type'  => 'video',
+        'button_labels' => array(
+            'select'       => __('Select video', 'onerock'),
+            'change'       => __('Change video', 'onerock'),
+            'default'      => __('Default', 'onerock'),
+            'remove'       => __('Remove', 'onerock'),
+            'placeholder'  => __('No video selected', 'onerock'),
+            'frame_title'  => __('Select hero video', 'onerock'),
+            'frame_button' => __('Choose video', 'onerock'),
+        ),
+    )));
+
+    // Hero Video Poster
+    $wp_customize->add_setting('hero_video_poster', array(
+        'default'           => 0,
+        'sanitize_callback' => 'absint',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_video_poster', array(
+        'label'    => __('Hero Video Poster', 'onerock'),
+        'section'  => 'hero_section',
+        'settings' => 'hero_video_poster',
+    )));
+
     // About Section
     $wp_customize->add_section('about_section', array(
         'title'    => __('About Us Section', 'onerock'),

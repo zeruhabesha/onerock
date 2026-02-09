@@ -45,10 +45,22 @@ get_header();
         
         <!-- Right Column: Hero Image (Hidden by default to match clean layout if no image) -->
         <div class="hero-visual animate scale-in delay-400">
-            <?php 
+            <?php
+            $hero_video_id = get_theme_mod('hero_video');
+            $hero_video_url = $hero_video_id ? wp_get_attachment_url($hero_video_id) : '';
+            $hero_video_poster_id = get_theme_mod('hero_video_poster');
+            $hero_video_poster_url = $hero_video_poster_id ? wp_get_attachment_url($hero_video_poster_id) : '';
             $hero_image = get_theme_mod('hero_image');
-            if ($hero_image) : 
             ?>
+
+            <?php if ($hero_video_url) : ?>
+                <div class="hero-video-wrapper">
+                    <video class="hero-video" autoplay muted loop playsinline poster="<?php echo esc_url($hero_video_poster_url ?: $hero_image); ?>">
+                        <source src="<?php echo esc_url($hero_video_url); ?>" type="video/mp4">
+                        <?php esc_html_e('Your browser does not support the video tag.', 'onerock'); ?>
+                    </video>
+                </div>
+            <?php elseif ($hero_image) : ?>
                 <div class="hero-image-wrapper">
                     <img src="<?php echo esc_url($hero_image); ?>" alt="<?php bloginfo('name'); ?> - Shopify Solutions" class="hero-image">
                 </div>
