@@ -3059,6 +3059,84 @@ body.dark-mode .portfolio-section::after {
     margin: 0 auto;
 }
 
+.page-content {
+    padding: 72px 0 96px;
+    background: var(--bg-primary);
+}
+
+.page-content .container {
+    max-width: 960px;
+}
+
+.page-content h1,
+.page-content h2,
+.page-content h3,
+.page-content h4,
+.page-content h5,
+.page-content h6 {
+    color: var(--text-primary);
+    margin: 32px 0 16px;
+    line-height: 1.2;
+}
+
+.page-content p {
+    margin-bottom: 18px;
+    color: var(--text-secondary);
+    font-size: 18px;
+}
+
+.page-content a {
+    color: var(--onerock-orange);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.page-content a:hover {
+    text-decoration: underline;
+}
+
+.page-content ul,
+.page-content ol {
+    margin: 16px 0 24px 20px;
+    color: var(--text-secondary);
+}
+
+.page-content li + li {
+    margin-top: 8px;
+}
+
+.page-content blockquote {
+    margin: 24px 0;
+    padding: 20px 24px;
+    border-left: 4px solid var(--onerock-orange);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border-radius: 12px;
+}
+
+.page-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+.page-content-empty {
+    text-align: center;
+    padding: 48px 32px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: var(--glass-shadow);
+}
+
+.page-content-empty h2 {
+    margin-top: 0;
+}
+
+.page-content-empty p {
+    font-size: 17px;
+}
+
 /* ============================================
    PORTFOLIO PAGE
    ============================================ */
