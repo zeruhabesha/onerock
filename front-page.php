@@ -9,34 +9,44 @@ get_header();
 ?>
 
 <!-- Hero Section -->
-<section class="premium-hero" style="background-image: url('<?php echo esc_url(get_theme_mod('hero_image', get_template_directory_uri() . '/hero-bg.png')); ?>');">
+<section class="premium-hero">
+    <!-- Decorative Background Blobs -->
+    <div class="hero-blob blob-1"></div>
+    <div class="hero-blob blob-2"></div>
+    <div class="hero-blob blob-3"></div>
+
     <div class="hero-container">
         <!-- Left Column: Content -->
         <div class="hero-content">
             <div class="hero-text-wrap">
-                <h6 class="hero-label animate fade-in">
-                    <?php echo get_theme_mod('hero_label', 'Shopify & Shopify Plus Agency'); ?>
-                </h6>
-                <h1 class="hero-headline shimmer-text reveal-text">
-                    <?php echo get_theme_mod('hero_headline', 'Shopify & Shopify Plus Agency for Small & Medium Businesses'); ?>
+                <div class="hero-label-wrap animate fade-in">
+                    <span class="hero-label-pill">Shopify & Shopify Plus Agency</span>
+                </div>
+                
+                <h1 class="hero-headline reveal-text">
+                    <span class="accent-color">Shopify & Shopify Plus</span> Agency for <br>
+                    Small & <span class="accent-color">Medium</span> Businesses
                 </h1>
+                
                 <p class="hero-description animate slide-up delay-200">
-                    <?php echo get_theme_mod('hero_description', 'OneRock Digital helps small and growing brands build beautiful Shopify stores, increase sales, and scale sustainably.'); ?>
+                    OneRock Digital helps small and growing brands build beautiful Shopify stores, increase sales, and scale sustainably. From store setup, design, and development to marketing and support, we’re your all-in-one Shopify growth partner.
                 </p>
+                
                 <div class="hero-buttons animate slide-up delay-300">
-                    <a href="<?php echo get_theme_mod('hero_btn_link', '#'); ?>" class="btn btn-primary magnetic-wrap">
+                    <a href="<?php echo esc_url(home_url('/contact')); ?>" class="btn btn-hero-primary magnetic-wrap">
                         <span class="btn-text">Book a Free Consultation</span>
-                        <span class="btn-shine"></span>
                     </a>
-                    <a href="#" class="btn btn-secondary">View Our Work</a>
+                    <a href="<?php echo esc_url(home_url('/portfolio')); ?>" class="btn btn-hero-outline">
+                        View Our Work
+                    </a>
                 </div>
             </div>
         </div>
         
-        <!-- Right Column: Hero Image -->
+        <!-- Right Column: Hero Image (Hidden by default to match clean layout if no image) -->
         <div class="hero-visual animate scale-in delay-400">
             <?php 
-            $hero_image = get_theme_mod('hero_image', get_template_directory_uri() . '/hero-bg.png');
+            $hero_image = get_theme_mod('hero_image');
             if ($hero_image) : 
             ?>
                 <div class="hero-image-wrapper">
